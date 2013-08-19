@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-lg-3 well well-padding-left">
+        <h5 class="nav-heading">Devices</h5>
+        <ul class="nav nav-pills nav-stacked nav-devices" data-ng-cloak="">
+            <li data-ng-repeat="device in devices"><a href="" data-ng-click="map_locate(device.id,device.name)"><i class="icon-user"></i> {{device.name}}</a></li>
+            <li class="disabled" data-ng-show="noDeviceFlag"><a href="" class="text-muted">No devices </a></li>
+            <li class="text-right"><a data-ng-click="showAll()" href=""> <i class="icon-search"></i>  Show All</a></li>
+        </ul>
+        <div id="loading_div" data-ng-hide="devices || noDeviceFlag">
+            <img src="img/ajax-loader.gif" class="ajax-loader">
+        </div>
+    </div>
+    <div class="col-lg-9">
+
+      <div id="map_canvas" style="height: 500px; width: 100%"></div>
+        <div class="overlay" data-ng-show="mapLoading">
+             <div id="loading_div">
+            <img src="img/ajax-loader.gif" class="ajax-loader">
+        </div>
+        </div>
+    </div>
+</div>
