@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-6 col-lg-offset-3 well">
         <div id="loading_div" data-ng-show="loginLoadingFlag">
-            <img src="images/ajax-loader.gif" class="ajax-loader">
+            <div class="ajax-loader"></div>
         </div>
         <form class="form-horizontal" data-ng-submit="login()" data-ng-hide="loginLoadingFlag">
             <div class="form-group" ng-class="{'has-error':flash}">

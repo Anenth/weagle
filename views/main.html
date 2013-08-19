@@ -7,15 +7,15 @@
             <li class="text-right"><a data-ng-click="showAll()" href=""> <i class="icon-search"></i>  Show All</a></li>
         </ul>
         <div id="loading_div" data-ng-hide="devices || noDeviceFlag">
-            <img src="images/ajax-loader.gif" class="ajax-loader">
+              <div class="ajax-loader"></div>
         </div>
     </div>
     <div class="col-lg-9">
 
       <div id="map_canvas" style="height: 500px; width: 100%"></div>
         <div class="overlay" data-ng-show="mapLoading">
-             <div id="loading_div">
-            <img src="images/ajax-loader.gif" class="ajax-loader">
+         <div id="loading_div">
+           <div class="ajax-loader"></div>
         </div>
         </div>
     </div>
