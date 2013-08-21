@@ -2,24 +2,25 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8">
 <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome-ie7.min.css">
- <![endif]-->
+<![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Weagle</title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="android application at wiinnova.com | Wiinnova Software Labs">
-    <meta name="keywords" content="andriod, android app, android application, Corporate Backup Solutions, Field Force Tracker, Wiinnova Software Labs ">   
-    <meta name="author" content="Anenth Vishnu">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-    <link rel="stylesheet" href="styles/5151c3b0.main.css">
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="images/w.png">
-    <title>Wiinnova Software Labs</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Weagle</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="android application at wiinnova.com | Wiinnova Software Labs">
+  <meta name="keywords" content="andriod, android app, android application, Corporate Backup Solutions, Field Force Tracker, Wiinnova Software Labs ">   
+  <meta name="author" content="Anenth Vishnu">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/f170ee3e.main.css">
+  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"> -->
+  <link rel="stylesheet" href="bower_components/datatables/media/css/demo_table.css">
+  <link rel="shortcut icon" href="images/w.png">
+  <title>Wiinnova Software Labs</title>
 </head>
 <body ng-app="WeagleApp">
     <!--[if lt IE 7]>
@@ -32,52 +33,54 @@
       <![endif]-->
 
       <!-- Add your site or application content here -->
-      <div class="navbar navbar-static-top">
+
+      <nav class="navbar navbar-static-top navbar-default" role="navigation">
         <div class="container">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" data-ng-show="Username">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
             </button>
-
-            <a href="#/home" class="navbar-brand">Weagle</a>
-            <div class="nav-collapse collapse navbar-responsive-collapse">
-                <ul class="nav navbar-nav pull-right" data-ng-show="Username" data-ng-cloak="">
-                  <li ng-class="{active:nav_current == '/home'}"><a href="#/home">Home</a></li>
-                  <li ng-class="{active:nav_current == '/message'}"><a href="#/message">Message</a></li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Username }} <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                      <li><a href=""><i class="icon-cog"></i> Settings</a></li>
-                      <li><a href="" data-ng-click="logout()"><i class="icon-signout"></i> Logout</a></li>
-                  </ul>
-              </li>
+            <a class="navbar-brand" href="#/home">Weagle</a>
+          </div>
+          <div class="collapse navbar-collapse navbar-collapse">
+           <ul class="nav navbar-nav navbar-right" data-ng-show="Username" data-ng-cloak="">
+            <li ng-class="{active:navCurrent == '/home'}"><a href="#/home">Home</a></li>
+            <li ng-class="{active:navCurrent == '/message'}"><a href="#/message">Message</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Username }} <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href=""><i class="glyphicon glyphicon-cog"></i> Settings</a></li>
+                <li><a href="" data-ng-click="logout()"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+              </ul>
+            </li>
           </ul>
-
+        </div><!-- /.navbar-collapse -->
       </div>
-  </div>
-</div>
-<div class="container">
-    <div class="row" data-ng-show="flash" data-ng-cloak="">
+    </nav>
+    <div class="container">
+      <div class="row" data-ng-show="flash" data-ng-cloak="">
         <div class="alert-navbar alert alert-danger text-center fade in">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            <strong>  {{ flash }} </strong> <br>
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <strong>  {{ flash }} </strong> <br>
 
         </div>
+      </div>
+      <div data-ng-view=""></div>
     </div>
-    <div data-ng-view=""></div>
-</div>
 
-<!-- Google Analytics -->
-<script>
-var _gaq=[['_setAccount','UA-43291427-1'],['_trackPageview']];
-(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src='//www.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+    <!-- Google Analytics -->
+    <script>
+    var _gaq=[['_setAccount','UA-43291427-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src='//www.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
 
-<script src="scripts/f6139b2e.plugins.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-<script src="scripts/46ff9cb2.scripts.js"></script>
-</body>
-</html>
+    <script src="scripts/3a8712b1.plugins.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="scripts/eac63daf.scripts.js"></script>
+  </body>
+  </html>
