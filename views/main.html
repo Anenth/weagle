@@ -18,7 +18,7 @@
             
             <li class="disabled" data-ng-show="noDeviceFlag"><a href="" class="text-muted">No devices </a></li>
             
-            <li class="text-right"><a data-ng-click="showAll()" href=""> <i class="glyphicon glyphicon-search"></i>  Show All</a></li>
+            <li class="text-right"><a data-ng-click="findMe()" href=""> <i class="glyphicon glyphicon-search"></i>  Show All</a></li>
         </ul>
         <div id="loading_div" data-ng-hide="devices || noDeviceFlag">
               <div class="ajax-loader"></div>
@@ -53,7 +53,7 @@
             <tr ng-repeat="checks in checkIns">
               <td>{{checks.location}}</td>
               <td>{{checks.message}}</td>
-              <td>{{checks.time | date:'h:mma -dd,MMM ' }}</td>
+              <td>{{checks.time | date:'dd-MM-yy hh:mm a' }}</td>
             </tr>
           </tbody>
         </table>
