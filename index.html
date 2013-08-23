@@ -15,7 +15,7 @@
   <meta name="keywords" content="andriod, android app, android application, Corporate Backup Solutions, Field Force Tracker, Wiinnova Software Labs ">   
   <meta name="author" content="Anenth Vishnu">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles/929eda94.main.css">
+  <link rel="stylesheet" href="styles/3a4c86fe.main.css">
   <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"> -->
   <link rel="shortcut icon" href="favicon.ico">
   <title>Wiinnova Software Labs</title>
@@ -43,10 +43,11 @@
             </button>
             <a class="navbar-brand" href="#/home">Weagle</a>
           </div>
-          <div class="collapse navbar-collapse navbar-collapse">
-           <ul class="nav navbar-nav navbar-right" data-ng-show="Username" data-ng-cloak="">
+          <div class="collapse navbar-collapse">
+           <ul class="nav navbar-nav navbar-right" ng-cloak="" data-ng-show="Username">
             <li ng-class="{active:navCurrent == '/home'}"><a href="#/home">Home</a></li>
             <li ng-class="{active:navCurrent == '/message'}"><a href="#/message">Message</a></li>
+            <li ng-class="{active:navCurrent == '/checkins'}"><a href="#/checkins">CheckIns</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Username }} <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -59,11 +60,10 @@
       </div>
     </nav>
     <div class="container">
-      <div class="row" data-ng-show="flash" data-ng-cloak="">
-        <div class="alert-navbar alert alert-danger text-center fade in">
-          <button type="button" class="close" data-dismiss="alert">×</button>
+      <div class="row" data-ng-show="flash" ng-cloak="">
+        <div class="alert-navbar alert alert-danger text-center">
           <strong>  {{ flash }} </strong> <br>
-
+          <button type="button" class="close" ng-click="flash=''">×</button>
         </div>
       </div>
       <div data-ng-view=""></div>
@@ -79,6 +79,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script src="scripts/fa6c3c73.plugins.js"></script>
     
-    <script src="scripts/1c30f5ab.scripts.js"></script>
+    <script src="scripts/3d037044.scripts.js"></script>
   </body>
   </html>
