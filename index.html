@@ -41,13 +41,14 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#/home">Weagle</a>
+            <a class="navbar-brand" href="/home">Weagle</a>
           </div>
           <div class="collapse navbar-collapse">
            <ul class="nav navbar-nav navbar-right" ng-cloak="" data-ng-show="Username">
-            <li ng-class="{active:navCurrent == '/home'}"><a href="#/home">Home</a></li>
-            <li ng-class="{active:navCurrent == '/message'}"><a href="#/message">Message</a></li>
-            <li ng-class="{active:navCurrent == '/checkins'}"><a href="#/checkins">CheckIns</a></li>
+            <li ng-class="{active:navCurrent == '/home'}"><a href="/home">Home</a></li>
+            <li ng-class="{active:navCurrent == '/message'}"><a href="/message">Message</a></li>
+            <li ng-class="{active:navCurrent == '/checkins'}"><a href="/checkins">CheckIns</a></li>
+            <li ng-class="{active:navCurrent == '/checkin'}"><a href="/checkin">CheckIn</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Username }} <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -76,9 +77,9 @@
       g.src='//www.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <script src="scripts/fa6c3c73.plugins.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=true"></script>
+    <script src="scripts/6184c8aa.plugins.js"></script>
     
-    <script src="scripts/3d037044.scripts.js"></script>
+    <script src="scripts/aa11c14d.scripts.js"></script>
   </body>
   </html>
