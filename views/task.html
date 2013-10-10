@@ -16,7 +16,9 @@
                         <div class="form-group">
                             <label for="inputAssginTo" class="col-lg-2 control-label">Assign to</label>
                             <div class="col-lg-10">
-                                <input required="" type="text" ng-model="newTask.assignTo" class="form-control" id="inputAssginTo" placeholder="Assign this task">
+                                <select ng-model="newTask.assignTo" required="" class="form-control" id="inputAssginTo">
+                                    <option ng-repeat="user in TaskUsers" value="{{user.name}}">{{user.name}}</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group">
@@ -51,8 +53,13 @@
                 </div>
             </div>
             <div class="row task-container">
+            <div class="row">
+                    <a href="" ng-click="predicate = 'priority'; reverse=!reverse" default="">Priority</a>
+                    <a href="" ng-click="predicate = 'cDate'; reverse=!reverse">Date</a>
+                    <a href="" ng-click="predicate = 'status'; reverse=!reverse">Status</a>
+            </div>
                 <div class="panel-group" id="accordion">
-                    <div class="panel panel-default" ng-repeat="task in Tasks">
+                    <div class="panel panel-default" ng-repeat="task in Tasks | orderBy:predicate:reverse">
                         <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#task{{$index}}">
                             <span class="slno label" ng-class="{
                             'label-info':task.status == 'Open',
